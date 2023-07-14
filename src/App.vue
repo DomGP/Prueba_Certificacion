@@ -1,4 +1,4 @@
-<template>
+<template >
   <v-app>
     <nav-comp/>
     <v-main>
@@ -23,3 +23,9 @@ export default {
   }
 };
 </script>
+
+<style >
+.app{
+  color:primary;
+}
+</style>
