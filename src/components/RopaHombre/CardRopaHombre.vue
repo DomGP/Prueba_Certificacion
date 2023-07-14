@@ -46,6 +46,28 @@
             Agregar Producto
         </v-btn>
         </v-card-actions>
+        <div class="text-center">
+            <v-snackbar
+            v-model="snackbar"
+            :multi-line="multiLine"
+            color="secondary"
+            dark
+            >
+            {{ ropa.title }} Agregado al Carrito
+                <v-icon>mdi-cart-plus</v-icon>
+
+            <template v-slot:action="{ attrs }">
+                <v-btn
+                color="white"
+                text
+                v-bind="attrs"
+                @click="snackbar = false"
+                >
+                Cerrar
+                </v-btn>
+            </template>
+            </v-snackbar>
+        </div>
     </v-card>
 </template>
 
@@ -62,6 +84,7 @@ export default {
   data: function () {
     return {
       selection: 1,
+      snackbar: false,
     };
   },
   computed: {
@@ -78,6 +101,7 @@ export default {
                 count:1,
             }
             this.agregarProductoACart(prod)
+              this.snackbar=true
         },
       
     },
