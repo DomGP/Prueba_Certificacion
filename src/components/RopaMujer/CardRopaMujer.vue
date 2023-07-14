@@ -74,7 +74,6 @@ export default {
                 id:this.ropa.id,
                 title:this.ropa.title,
                 price:this.ropa.price,
-                image:this.ropa.image,
                 count:1,
             }
             this.agregarProductoACart(prod)

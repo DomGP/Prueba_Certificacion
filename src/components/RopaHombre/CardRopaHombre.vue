@@ -1,5 +1,5 @@
 <template>
-    <v-card class="mx-auto my-12" max-width="374" height="800" elevation="10">
+    <v-card class="mx-auto my-12" max-width="374" height="700" elevation="10">
         <v-img height="250" :src="ropa.image"></v-img>
 
         <v-card-title class="title">{{ ropa.title }}</v-card-title>
@@ -96,7 +96,7 @@ export default {
   margin: 0 auto;
 }
 .desc{
-  height: 200px;
+  height: 150px;
 }
 .title{
   height: 140px;

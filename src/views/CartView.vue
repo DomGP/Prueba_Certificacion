@@ -10,15 +10,15 @@
                 <h2>Bolsa de Compras</h2>
                 <table-comp/>                
             </v-col>
-            <v-col>
+             <v-col>
                 <h2>Datos de Facturación</h2>
                 <br>
                 <h3 class="text-left">Datos Comprador</h3>
                 <form-comp/>
-                <h3 class="text-left">Datos del Despacho</h3>
+               <!--  <h3 class="text-left">Datos del Despacho</h3>
                 <formDes-comp/>
                 <h3 class="text-left">Forma de Pago</h3>
-                <formPago-comp/>
+                <formPago-comp/> -->
 
             </v-col>
         </v-row>
@@ -28,8 +28,8 @@
 <script>
 import Table from '@/components/Cart/Table.vue'
 import Form from '@/components/Cart/Form.vue'
-import FormDespacho from '@/components/Cart/FormDespacho.vue'
-import FormPago from '@/components/Cart/FormPago.vue'
+/* import FormDespacho from '@/components/Cart/FormDespacho.vue'
+import FormPago from '@/components/Cart/FormPago.vue' */
 export default {
     name: 'cart-view',
     // props: {},
@@ -44,8 +44,8 @@ export default {
     components: {
         'table-comp':Table,
         'form-comp':Form,
-        'formDes-comp':FormDespacho,
-        'formPago-comp':FormPago
+        /* 'formDes-comp':FormDespacho,
+        'formPago-comp':FormPago */
     },
     // mixins: [],
     // filters: {},

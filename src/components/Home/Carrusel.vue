@@ -8,11 +8,11 @@
         <v-carousel-item
         v-for="mejorproducto in mejoresproductos"
         :key="mejorproducto.title"
-        height="300px"
+        height="200px"
         width="500px"
         class="mx-auto"
-        :src="mejorproducto.image"
         >
+        <img :src="mejorproducto.image" height="400" alt="">
         <v-row
             class="fill-height"
             align="start"

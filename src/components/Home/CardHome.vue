@@ -16,20 +16,11 @@
                     :src="tipoproducto.image"
                     >
                     </v-img>
-                    <v-card-title class="text-center" color="primary">{{tipoproducto.name}}</v-card-title>
+                    <v-card-title class="text-center" color="primary">{{capitalizeFirstLetter(tipoproducto.name)}}</v-card-title>
                     <v-card-text class="text--primary mx-0">
                     <div>{{tipoproducto.text}}</div>
                     </v-card-text>
 
-                    <v-card-actions>
-                    <v-btn
-                        color="primary"
-                        dark
-                        @click="redirectTo(tipoproducto.name)"
-                    >
-                        Ver Productos
-                    </v-btn>
-                    </v-card-actions>
                 </v-card>
             </v-col>
         </v-row>
@@ -48,9 +39,9 @@ export default {
         ...mapState(['tiposproductos']),
     },
     methods: {
-        redirectTo(nameRoute){
-        this.$router.push({name:nameRoute})
-    },
+    capitalizeFirstLetter(text) {
+        return text.charAt(0).toUpperCase() + text.slice(1);
+    }
     }
     // watch: {},
     // components: {},

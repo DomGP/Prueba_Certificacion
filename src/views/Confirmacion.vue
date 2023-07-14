@@ -16,8 +16,9 @@
                     </v-list-item-content>
                     </v-list-item>
 
-                    <v-card-actions>
+                    <v-card-actions class="d-flex justify-center align-end">
                     <v-btn
+                        class="btn"
                         outlined
                         rounded
                         dark
@@ -57,5 +58,7 @@ export default {
 </script>
 
 <style scoped>
-    
+    .btn{
+        margin: 0 auto;
+    }
 </style>

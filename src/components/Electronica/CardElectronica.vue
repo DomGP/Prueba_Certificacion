@@ -27,9 +27,6 @@
         </v-card-text>
 
         <v-divider class="mx-4"></v-divider>
-
-      
-
         <v-card-text>
         <v-chip-group
             active-class="primary accent-4 white--text"
