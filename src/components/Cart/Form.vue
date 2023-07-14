@@ -7,7 +7,6 @@
   <div></div>
     <v-text-field
       v-model="name"
-      :counter="10"
       :rules="nameRules"
       label="Nombre"
       required
@@ -38,7 +37,6 @@
     <h3 class="text-left">Datos del Despacho</h3>
     <v-text-field
       v-model="direccion"
-      :counter="10"
       :rules="direccionRules"
       label="Dirección"
       required
@@ -46,7 +44,6 @@
 
     <v-text-field
       v-model="comuna"
-      :counter="10"
       :rules="comunaRules"
       label="Comuna"
       required
@@ -71,6 +68,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 export default {
     name: 'form-comp',
     // props: {},
@@ -80,7 +78,6 @@ export default {
             name: '',
             nameRules: [
               v => !!v || 'Nombre es requerido',
-              v => (v && v.length <= 40) || 'Name must be less than 10 characters',
             ],
             email: '',
             emailRules: [
@@ -118,11 +115,14 @@ export default {
     },
     // computed: {},
     methods: {
+      ...mapActions(['limpiarCarrito']),
         validate () {
-          if(this.$refs.form.validate()){
+          let resp=this.$refs.form.validate()
+          if(resp){
+            this.limpiarCarrito()
             this.$router.push('/confirmacion')
           }
-    }
+          }
     }
     // watch: {},
     // components: {},

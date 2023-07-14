@@ -29,7 +29,31 @@ export default new Vuex.Store({
       return getters.cartProducts.reduce((total,prod)=>{
         return total+prod.count
       },0)
-    }
+    },
+    
+    descuentoTotal(state, getters) {
+      let subtotal = Math.round(getters.cartTotal)
+      let descuento = 0
+      if (subtotal < 500) {
+          descuento = Math.round(subtotal * 0.05)
+          return descuento
+      } else {
+          descuento = Math.round(subtotal * 0.11)
+          return descuento
+      }
+    },
+    descuentoProductos(state, getters) {
+      let subtotal = Math.round(getters.cartTotal)
+      let descuento = ''
+      if (subtotal < 500) {
+          descuento = '5%'
+          return descuento
+      } else {
+          descuento = '11%'
+          return descuento
+      }
+    },
+
   },
   mutations: {
     FETCH_MEJORES_PRODUCTOS(state,mejoresproductos){
@@ -77,6 +101,9 @@ export default new Vuex.Store({
           p.count-=1
         }
       })
+    },
+    LIMPIAR_CARRITO(state){
+      state.cart=[]
     }
 
   },
@@ -146,6 +173,9 @@ export default new Vuex.Store({
     },
     quitarStockCart({commit},idProduct){
       commit('QUITAR_STOCK_CART',idProduct)
+    },
+    limpiarCarrito({commit}){
+      commit('LIMPIAR_CARRITO')
     }
 
   },

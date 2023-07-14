@@ -8,7 +8,17 @@
                 <template v-slot:top>
                 <v-toolbar flat>
                     <v-toolbar-title>
-                        Total Carrito <span class="success--text">${{Number(cartTotal).toLocaleString("es-CL")}}</span>
+                        SubTotal <span class="success--text">${{Number(cartTotal).toLocaleString("en-US")}}</span>
+                    </v-toolbar-title
+                >
+                <v-divider></v-divider>
+                <v-toolbar-title>
+                        Total Descuento <span class="success--text">({{descuentoProductos}}) ${{Number(descuentoTotal).toLocaleString("en-US")}}</span>
+                    </v-toolbar-title
+                >
+                <v-divider></v-divider>
+                <v-toolbar-title>
+                        Total Carrito <span class="success--text">${{Math.round(Number(cartTotal) - Number(descuentoTotal)).toLocaleString("en-US")}}</span>
                     </v-toolbar-title
                 >
                 <v-divider class="mx-4" inset vertical></v-divider>
@@ -63,13 +73,13 @@ export default {
             { text: "Cantidad", value: "count" },
             { text: "Precio", value: "price" },
             { text: "Subtotal", value: "total" },
-            { text: "Acciones", value: "actions", sortable: false },
+            { text: "Acciones", value: "actions"},
         ],
             deleteId:null
         }
     },
     computed: {
-        ...mapGetters(['cartTotal','cartProducts'])
+        ...mapGetters(['cartTotal','cartProducts','descuentoTotal','descuentoProductos'])
     },
     methods: {
         ...mapActions(['quitarProductoCart','agregarStockCart','quitarStockCart']),
