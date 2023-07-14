@@ -7,12 +7,11 @@
         >
         <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
 
-        <v-toolbar-title>Babka Page</v-toolbar-title>
+        <v-toolbar-title>TIENDA DETODITO</v-toolbar-title>
 
         <v-spacer></v-spacer>
-        <v-badge 
-        :content="cartCount" 
-        :value="cartCount>0">
+        <v-badge :content="cartCount" class="ma-3" :value="cartCount>0"
+        >
             <v-icon 
             @click="$router.push('/cart')"
             >
@@ -46,6 +45,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
     name: 'navBar-comp',
     // props: {},
@@ -60,6 +60,21 @@ export default {
                     name:'Home'
                 },
                 {
+                    icon:'mdi-radio',
+                    title:'Electronica',
+                    name:'Electronica'
+                },
+                {
+                    icon:'mdi-human-male',
+                    title:'Ropa Hombre',
+                    name:'RopaHombre'
+                },
+                {
+                    icon:'mdi-human-female',
+                    title:'Ropa Mujer',
+                    name:'RopaMujer'
+                },
+                {
                     icon:'mdi-cart',
                     title:'Carrito',
                     name:'Cart'
@@ -68,6 +83,7 @@ export default {
         }
     },
     computed: {
+        ...mapGetters(['cartCount']),
         vitaActualName(){
             return this.$route.name
         }

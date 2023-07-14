@@ -1,7 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Electronica from '@/views/Electronica.vue'
+import RopaHombre from '@/views/RopaHombre.vue'
+import RopaMujer from '@/views/RopaMujer.vue'
 import CartView from '@/views/CartView.vue'
+import Confirmacion from '@/views/Confirmacion.vue'
 import NotFound from '@/views/NotFound.vue'
 
 
@@ -12,6 +16,26 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/electronica',
+    name: 'Electronica',
+    component: Electronica
+  },
+  {
+    path: '/ropa_hombre',
+    name: 'RopaHombre',
+    component: RopaHombre
+  },
+  {
+    path: '/ropa_mujer',
+    name: 'RopaMujer',
+    component: RopaMujer
+  },
+  {
+    path: '/confirmacion',
+    name: 'Confirmacion',
+    component: Confirmacion
   },
   {
     path:'/cart',

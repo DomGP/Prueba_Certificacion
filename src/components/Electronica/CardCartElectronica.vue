@@ -12,6 +12,7 @@
                     </v-toolbar-title
                 >
                 <v-divider class="mx-4" inset vertical></v-divider>
+                <v-btn @click="$router.push('/cart')">Ir a Pagar</v-btn>
                 <v-spacer></v-spacer>
 
                 <v-dialog v-model="dialogDelete" max-width="500px">
@@ -37,7 +38,7 @@
                     <img :src="item.image" width="75" alt="">
                 </template>
                 <template v-slot:[`item.actions`]="{ item }">
-                <v-icon small class="mr-2" @click="addStock(item)">
+                    <v-icon small class="mr-2" @click="addStock(item)">
                     mdi-plus-circle
                 </v-icon>
                 <v-icon small class="mr-2" @click="removeStock(item)">
@@ -51,7 +52,7 @@
 <script>
 import { mapActions, mapGetters } from 'vuex'
 export default {
-    name: 'cart-view',
+    name: 'cartelectronic-view',
     // props: {},
     data: function(){
         return {
