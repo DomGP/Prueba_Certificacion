@@ -5,4 +5,4 @@
 ### · Carrusel de vista de productos destacados
 ### · Panel lateral con categorías de productos
 ### · Vista de carrito de compra para añadir y gestionar productos
-### · Formulario de despacho de productos
+### · Formulario de despacho de productos 
