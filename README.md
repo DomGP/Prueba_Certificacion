@@ -1,24 +1,7 @@
-# prueba_certificacion
-
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+# Prueba de Certificación - Tienda con carrito de comprass
+## Build: https://prueba-certificacion-vue.netlify.app/
+## Descripción: Desarrollo de sitio tipo tienda incorporando selección de productos y carrito de compra usando Vue y Vuetify.
+## Detalles:
+### · Filtrado de publicaciones (lista de productos) por nombre.
+### · Ordenamiento de publicaciones (lista de productos) por selección del usuario (orden alfabético - precio)
+### · Validación de campos en formularios 
